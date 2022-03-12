@@ -113,6 +113,7 @@ export class AppImageUpdater extends BaseUpdater {
       env.APPIMAGE_EXIT_AFTER_INSTALL = "true"
       execFileSync(destination, [], { env })
     }
+    this.emit("appimage-updated", destination)
     return true
   }
 }
